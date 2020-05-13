@@ -1,0 +1,39 @@
+version: "3.1"
+
+services:
+  ldap:
+    build: ./ldap/
+    image: 389ds:latest
+    volumes:
+      - ./data:/var/lib/dirsrv:Z
+      - ./config:/etc/dirsrv:Z
+      - ./logs:/var/log/dirsrv:Z
+      - ./certs:/certs:Z
+    environment:
+      DIR_SUFFIX: dc=idptestbed
+      DIR_ADMIN_USERNAME: "admin"
+      DIR_MANAGER_PASSWORD: "admin"
+      DIR_ADMIN_UID: "15000"
+      DIR_USERS_HOME: "/users"
+    restart: always
+
+  idp:
+    build: ./shibboleth-idp/
+    depends_on:
+      - ldap
+    ports:
+      - "80:8080"
+    secrets:
+      - source: idp_encryption
+      - source: idp_signing
+
+  sp:
+    build: ./flask-sp/
+    ports:
+      - "8000:8000"
+
+secrets:
+  idp_encryption:
+    file: ./secrets/idp/idp-encryption.key
+  idp_signing:
+    file: ./secrets/idp/idp-signing.key

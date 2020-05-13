@@ -1,0 +1,5 @@
+flask==1.0
+python-saml
+isodate
+defusedxml
+xmlsec
