@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="content d-flex justify-content-center">
+  {% if active_user %}
+  <form>
+    <div class="form-group">
+      <label for="uid-input">UID:</label>
+      <input
+        id="uid-input"
+        type="text"
+        class="form-control"
+        value="{{ active_user.uid }}"
+        readonly
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="first-name-input">First name:</label>
+      <input
+        id="first-name-input"
+        type="text"
+        class="form-control"
+        value="{{ active_user.first_name }}"
+        readonly
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="last-name-input">Last name:</label>
+      <input
+        id="last-name-input"
+        type="text"
+        class="form-control"
+        value="{{ active_user.last_name }}"
+        readonly
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="mail-input">Mail:</label>
+      <input
+        id="mail-input"
+        type="text"
+        class="form-control"
+        value="{{ active_user.mail }}"
+        readonly
+      >
+    </div>
+
+    <a
+      class="btn btn-primary"
+      href="{{ url_for('auth.logout') }}"
+      role="button"
+    >Logout</a>
+  </form>
+  {% endif %}
+</div>
+{% endblock %}

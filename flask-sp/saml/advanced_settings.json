@@ -7,7 +7,7 @@
         "signMetadata": false,
         "wantMessagesSigned": false,
         "wantAssertionsSigned": false,
-        "wantNameId" : true,
+        "wantNameId" : false,
         "wantNameIdEncrypted": false,
         "wantAssertionsEncrypted": false,
         "signatureAlgorithm": "http://www.w3.org/2001/04/xmldsig-more#rsa-sha256",

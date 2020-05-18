@@ -26,14 +26,17 @@ services:
     secrets:
       - source: idp_encryption
       - source: idp_signing
+      - source: idp_sealer
 
-  sp:
-    build: ./flask-sp/
-    ports:
-      - "8000:8000"
+  # sp:
+  #   build: ./flask-sp/
+  #   ports:
+  #     - "8000:8000"
 
 secrets:
   idp_encryption:
     file: ./secrets/idp/idp-encryption.key
   idp_signing:
     file: ./secrets/idp/idp-signing.key
+  idp_sealer:
+    file: ./secrets/idp/sealer.jks

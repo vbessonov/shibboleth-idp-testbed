@@ -17,7 +17,7 @@
     <AttributeFilterPolicy id="example1">
         <PolicyRequirementRule xsi:type="OR">
             <Rule xsi:type="Requester" value="https://sp.idptestbed/shibboleth" />
-            <Rule xsi:type="Requester" value="http://localhost:8000/metadata/" />
+            <Rule xsi:type="Requester" value="http://sp.hilbertteam.net/metadata/" />
             <Rule xsi:type="Requester" value="http://idptestbed/sp/simplesamlphp" />
         </PolicyRequirementRule>
 

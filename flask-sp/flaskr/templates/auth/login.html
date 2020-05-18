@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<script src="https://cdn.jsdelivr.net/gh/xcash/bootstrap-autocomplete@v2.3.5/dist/latest/bootstrap-autocomplete.min.js">
+</script>
+<style>
+  #idp-autocomplete-dropdown {
+    width: 25em;
+    text-align: center;
+  }
+
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="content d-flex justify-content-center">
+  {% if error %}
+  <div
+    class="alert alert-danger"
+    role="alert"
+  >
+    {{ error }}
+  </div>
+  {% endif %}
+
+  <div class="row">
+    <div
+      sm="auto"
+      class="row d-flex flex-column justify-content-center align-items-center text-center"
+    >
+      <h4>Test SAML SP</h4>
+
+      <div
+        class="alert alert-light"
+        role="alert"
+      >
+        For test IdP provider search for "Shibboleth Test IdP"
+      </div>
+
+      <form
+        id="login-form"
+        method="POST"
+        action="{{ url_for('auth.login') }}"
+      >
+        <div class="form-group">
+          <input
+            id="idp"
+            name="idp"
+            type="hidden"
+          >
+          <input
+            id="idp-autocomplete-dropdown"
+            class="form-control"
+            type="text"
+            placeholder="Start typing to search for Identity Provider"
+            data-url="{{ url_for('saml.fetch_idps') }}"
+            autocomplete="off"
+          >
+        </div>
+
+        <button
+          id="submit-button"
+          class="btn btn-primary"
+          type="submit"
+          disabled
+        >Login</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function () {
+    const autoCompleteInput = $('#idp-autocomplete-dropdown');
+
+    autoCompleteInput.autoComplete();
+
+    autoCompleteInput.on('autocomplete.select', function (event, item) {
+      if (item) {
+        console.log(item);
+        window.localStorage.setItem('idp', item.value);
+        $('#idp').val(item.value);
+      }
+    });
+
+    autoCompleteInput.on('change', function (event) {
+      if ($(this).val()) {
+        $('#submit-button').prop('disabled', false)
+      } else {
+        $('#submit-button').prop('disabled', true)
+      }
+    });
+  });
+
+  $('#login-form').submit(function (event) {
+
+  });
+
+</script>
+{% endblock %}

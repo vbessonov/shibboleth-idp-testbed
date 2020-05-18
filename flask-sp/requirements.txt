@@ -1,5 +1,7 @@
-flask==1.0
+Flask
+Flask-SQLAlchemy
 python-saml
 isodate
 defusedxml
 xmlsec
+click

@@ -5,44 +5,45 @@
 
      This metadata is not dynamic - it will not change as your configuration changes.
 -->
-<EntityDescriptor  xmlns="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:shibmd="urn:mace:shibboleth:metadata:1.0" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:mdui="urn:oasis:names:tc:SAML:metadata:ui" entityID="https://idptestbed.com/idp/shibboleth">
+<EntityDescriptor
+  xmlns="urn:oasis:names:tc:SAML:2.0:metadata"
+  xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+  xmlns:shibmd="urn:mace:shibboleth:metadata:1.0"
+  xmlns:xml="http://www.w3.org/XML/1998/namespace"
+  xmlns:mdui="urn:oasis:names:tc:SAML:metadata:ui"
+  entityID="http://idp.hilbertteam.net/idp/shibboleth">
 
     <IDPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol urn:oasis:names:tc:SAML:1.1:protocol urn:mace:shibboleth:1.0">
 
         <Extensions>
             <shibmd:Scope regexp="false">example.org</shibmd:Scope>
-<!--
+
     Fill in the details for your IdP here
 
             <mdui:UIInfo>
-                <mdui:DisplayName xml:lang="en">A Name for the IdP at idptestbed</mdui:DisplayName>
-                <mdui:Description xml:lang="en">Enter a description of your IdP at idptestbed</mdui:Description>
-                <mdui:Logo height="80" width="80">https://idptestbed/Path/To/Logo.png</mdui:Logo>
+                <mdui:DisplayName xml:lang="en">Shibboleth Test IdP</mdui:DisplayName>
+                <mdui:Description xml:lang="en">Shibboleth Test IdP</mdui:Description>
             </mdui:UIInfo>
--->
+
         </Extensions>
 
         <KeyDescriptor use="signing">
             <ds:KeyInfo>
                     <ds:X509Data>
                         <ds:X509Certificate>
-MIIDEzCCAfugAwIBAgIUS9SuTXwsFVVG+LjOEAbLqqT/el0wDQYJKoZIhvcNAQEL
-BQAwFTETMBEGA1UEAwwKaWRwdGVzdGJlZDAeFw0xNTEyMTEwMjIwMjZaFw0zNTEy
-MTEwMjIwMjZaMBUxEzARBgNVBAMMCmlkcHRlc3RiZWQwggEiMA0GCSqGSIb3DQEB
-AQUAA4IBDwAwggEKAoIBAQCMAoDHx8xCIfv/6QKqt9mcHYmEJ8y2dKprUbpdcOjH
-YvNPIl/lHPsUyrb+Nc+q2CDeiWjVk1mWYq0UpIwpBMuw1H6+oOqr4VQRi65pin0M
-SfE0MWIaFo5FPvpvoptkHD4gvREbm4swyXGMczcMRfqgalFXhUD2wz8W3XAM5Cq2
-03XeJbj6TwjvKatG5XPdeUe2FBGuOO2q54L1hcIGnLMCQrg7D31lR13PJbjnJ0No
-5C3k8TPuny6vJsBC03GNLNKfmrKVTdzr3VKp1uay1G3DL9314fgmbl8HA5iRQmy+
-XInUU6/8NXZSF59p3ITAOvZQeZsbJjg5gGDip5OZo9YlAgMBAAGjWzBZMB0GA1Ud
-DgQWBBRPlM4VkKZ0U4ec9GrIhFQl0hNbLDA4BgNVHREEMTAvggppZHB0ZXN0YmVk
-hiFodHRwczovL2lkcHRlc3RiZWQvaWRwL3NoaWJib2xldGgwDQYJKoZIhvcNAQEL
-BQADggEBAIZ0a1ov3my3ljJG588I/PHx+TxAWONWmpKbO9c/qI3Drxk4oRIffiac
-ANxdvtabgIzrlk5gMMisD7oyqHJiWgKv5Bgctd8w3IS3lLl7wHX65mTKQRXniG98
-NIjkvfrhe2eeJxecOqnDI8GOhIGCIqZUn8ShdM/yHjhQ2Mh0Hj3U0LlKvnmfGSQl
-j0viGwbFCaNaIP3zc5UmCrdE5h8sWL3Fu7ILKM9RyFa2ILHrJScV9t623IcHffHP
-IeaY/WtuapsrqRFxuQL9QFWN0FsRIdLmjTq+00+B/XnnKRKFBuWfjhHLF/uu8f+E
-t6Lf23Kb8yD6ZR7dihMZAGHnYQ/hlhM=
+MIICXDCCAcWgAwIBAgIBADANBgkqhkiG9w0BAQ0FADBLMQswCQYDVQQGEwJ1czEN
+MAsGA1UECAwET2hpbzETMBEGA1UECgwKQUNNRSwgSW5jLjEYMBYGA1UEAwwPaGls
+YmVydHRlYW0ubmV0MB4XDTIwMDUxODE4MjUyM1oXDTIxMDUxODE4MjUyM1owSzEL
+MAkGA1UEBhMCdXMxDTALBgNVBAgMBE9oaW8xEzARBgNVBAoMCkFDTUUsIEluYy4x
+GDAWBgNVBAMMD2hpbGJlcnR0ZWFtLm5ldDCBnzANBgkqhkiG9w0BAQEFAAOBjQAw
+gYkCgYEAqx63LDc2vjoYlTvddjPOKDsduR0++A1lmGxdX1N6Ei4NRiWaqBnVij6m
+Oqzq5quMA8M3du71aVzE0ELJOuhzrjpu6Rn40KGO6Ewiv3StQkbwAArrrIlIPA9U
+MpsGD+/oNXlbF9ZbfqvxEoZcEk6XR6fJT7zXBNzp75dCi39D53MCAwEAAaNQME4w
+HQYDVR0OBBYEFCmRcv2NFCSso9IRSFQsdST5FpBfMB8GA1UdIwQYMBaAFCmRcv2N
+FCSso9IRSFQsdST5FpBfMAwGA1UdEwQFMAMBAf8wDQYJKoZIhvcNAQENBQADgYEA
+c/ddQRAswvrlYD8IOA9TCjyqkUJmyJBOj+d0PTzW7lF7NUyPSp0SunDq12RD8imV
+q15wNzuzsiIfUZ7F/sp1iFH8ASrBS4sk39stDgUcjFNcwekihUGw3GfhGcniFvvi
+a/F82fbPXBPajb9nXNyn3ZwlLsooeC06oIj8FlyHoR8=
                         </ds:X509Certificate>
                     </ds:X509Data>
             </ds:KeyInfo>
@@ -78,7 +79,7 @@ p+tGUbGS2l873J5PrsbpeKEVR/IIoKo=
 
         <NameIDFormat>urn:mace:shibboleth:1.0:nameIdentifier</NameIDFormat>
         <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat>
-        <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="http://idptestbed.com/idp/profile/SAML2/Redirect/SSO"/>
+        <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="http://idp.hilbertteam.net/idp/profile/SAML2/Redirect/SSO"/>
 
     </IDPSSODescriptor>
 
