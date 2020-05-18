@@ -4,17 +4,16 @@ import os
 from flask import Flask
 
 import db
-from saml import metadata
-from blueprints import auth, saml, home
+from flaskr.saml import metadata
+from flaskr.blueprints import auth, saml, home
 
 
 def create_app(test_config=None):
-    # create and configure the app
     app = Flask(__name__, instance_relative_config=True)
 
     logging.basicConfig(level=logging.INFO)
 
-    app.config.from_object('config.Config')
+    app.config.from_object('flaskr.config.Config')
 
     if os.getenv('APPLICATION_SETTINGS'):
         app.config.from_envvar('APPLICATION_SETTINGS')

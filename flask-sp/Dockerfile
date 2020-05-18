@@ -9,6 +9,11 @@ RUN pip install pip --upgrade && \
   pip install setuptools --upgrade && \
   pip install -rrequirements.txt
 
-COPY . /app
+ENV FLASK_APP=flaskr/__init__.py
+ENV FLASK_ENV=production
+ENV FLASK_DEBUG=0
 
-CMD ["python", "/app/index.py"]
+WORKDIR /app
+COPY flaskr /app/flaskr
+
+CMD ["flask", "run", "--host", "0.0.0.0", "--port", "5000"]

@@ -1,6 +1,6 @@
 from flask import Blueprint, redirect, url_for, render_template
 
-from ..saml.auth import AuthenticationManager
+from flaskr.saml.auth import AuthenticationManager
 
 blueprint = Blueprint('home', __name__, url_prefix='/')
 

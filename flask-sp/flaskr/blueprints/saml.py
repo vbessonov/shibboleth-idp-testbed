@@ -1,7 +1,7 @@
 from flask import Blueprint, request, jsonify, redirect, make_response
 
-from db import IdentityProviderMetadata
-from ..saml.auth import AuthenticationManager
+from flaskr.db import IdentityProviderMetadata
+from flaskr.saml.auth import AuthenticationManager
 
 blueprint = Blueprint('saml', __name__, url_prefix='/SAML2')
 

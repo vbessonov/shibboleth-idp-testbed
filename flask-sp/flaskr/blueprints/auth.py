@@ -2,9 +2,9 @@ import logging
 
 from flask import (
     Blueprint, render_template,
-    request, redirect)
+    request, redirect, url_for, jsonify)
 
-from ..saml.auth import AuthenticationManager
+from flaskr.saml.auth import AuthenticationManager
 
 _logger = logging.getLogger(__name__)
 blueprint = Blueprint('auth', __name__, url_prefix='/auth')
@@ -27,10 +27,12 @@ def login():
 def logout():
     authentication_manager = AuthenticationManager()
 
-    # url = authentication_manager.start_logout()
     authentication_manager.set_active_idp(None)
     authentication_manager.set_active_user(None)
 
-    # return redirect(url)
-
     return redirect(url_for('auth.login'))
+
+
+@blueprint.route('/me', methods=('GET',))
+def me():
+    return jsonify(AuthenticationManager.get_active_user())

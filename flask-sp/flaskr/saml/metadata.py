@@ -8,7 +8,7 @@ from onelogin.saml2.constants import OneLogin_Saml2_Constants
 from onelogin.saml2.idp_metadata_parser import OneLogin_Saml2_IdPMetadataParser
 from onelogin.saml2.utils import OneLogin_Saml2_Utils
 
-from db import IdentityProviderMetadata, get_db
+from flaskr.db import IdentityProviderMetadata, get_db
 
 
 class MetadataManager(object):
