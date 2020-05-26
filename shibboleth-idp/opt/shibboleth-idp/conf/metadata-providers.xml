@@ -25,7 +25,8 @@
     <!--                                                                                            -->
     <!-- ========================================================================================== -->
 
-    <MetadataProvider id="TestSP"  xsi:type="FilesystemMetadataProvider" metadataFile="%{idp.home}/metadata/sp-metadata.xml"/>
+    <MetadataProvider id="opds-feed-sp"  xsi:type="FilesystemMetadataProvider" metadataFile="%{idp.home}/metadata/opds-feed-sp-metadata.xml"/>
+    <MetadataProvider id="circulation-manager-sp"  xsi:type="FilesystemMetadataProvider" metadataFile="%{idp.home}/metadata/circulation-manager-sp-metadata.xml"/>
 
     <!-- Example HTTP metadata provider.  Use this if you want to download
          the metadata from a remote service.

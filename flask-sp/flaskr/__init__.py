@@ -5,7 +5,7 @@ from flask import Flask
 
 import db
 from flaskr.saml import metadata
-from flaskr.blueprints import auth, saml, home
+from flaskr.blueprints import auth, books, feed, home, saml
 
 
 def create_app(test_config=None):
@@ -27,9 +27,10 @@ def create_app(test_config=None):
     db.init_app(app)
     metadata.init_app(app)
 
-    app.register_blueprint(home.blueprint)
-    print('Home')
     app.register_blueprint(auth.blueprint)
+    app.register_blueprint(books.blueprint)
+    app.register_blueprint(feed.blueprint)
+    app.register_blueprint(home.blueprint)
     app.register_blueprint(saml.blueprint)
 
     return app
