@@ -1,0 +1,7 @@
+Flask
+Flask-SQLAlchemy
+python-saml
+isodate
+defusedxml
+xmlsec
+click

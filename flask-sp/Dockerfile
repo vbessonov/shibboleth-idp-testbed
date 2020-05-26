@@ -15,5 +15,6 @@ ENV FLASK_DEBUG=0
 
 WORKDIR /app
 COPY flaskr /app/flaskr
+COPY saml /app/saml
 
 CMD ["flask", "run", "--host", "0.0.0.0", "--port", "5000"]

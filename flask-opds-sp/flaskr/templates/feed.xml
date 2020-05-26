@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"
+      xmlns:dcterms="http://purl.org/dc/terms/"
+      xmlns:opds="http://opds-spec.org/"
+      xmlns:dc="http://purl.org/dc/elements/1.1/"
+      xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">
+    <id>urn:uuid:2853dacf-ed79-42f5-8e8a-a7bb3d1ae6a2</id>
+    <title>OPDS Catalog Root Example</title>
+    <updated>2010-01-10T10:03:10Z</updated>
+    <author>
+        <name>Spec Writer</name>
+        <uri>http://opds-spec.org</uri>
+    </author>
+
+    <entry>
+        <id>urn:uuid:44094664-9a0e-11ea-b51d-8c8590ae71cd</id>
+        <title>Dostoevsky Epub</title>
+        <updated>2020-05-19T13:21:05Z</updated>
+        <category scheme="http://www.bisg.org/standards/bisac_subject/index.html"
+                  term="FIC020000"
+                  label="FICTION / Men's Adventure"/>
+
+        <dc:language>en</dc:language>
+        <dc:issued>1917</dc:issued>
+        <author>
+            <name>Barber, Paul</name>
+        </author>
+
+        <link rel="http://opds-spec.org/acquisition/open-access"
+              href="{{ url_for('static', filename='books/Dostoevsky-epub.pdf', _external=True) }}"
+              type="application/pdf"></link>
+
+        <content>Dostoevsky's &lt;i&gt;Crime and Punishment&lt;/i&gt; and the writing of fiction&lt;br /&gt;</content>
+    </entry>
+</feed>
