@@ -27,7 +27,7 @@
         </author>
 
         <link rel="http://opds-spec.org/acquisition/open-access"
-              href="{{ url_for('books.index', book='books/Dostoevsky-epub.pdf', _external=True) }}"
+              href="{{ url_for('books.index', book='Dostoevsky-epub.pdf', _external=True) }}"
               type="application/pdf"></link>
 
         <content>Dostoevsky's &lt;i&gt;Crime and Punishment&lt;/i&gt; and the writing of fiction&lt;br /&gt;</content>
